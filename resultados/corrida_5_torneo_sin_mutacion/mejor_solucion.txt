@@ -1,0 +1,49 @@
+Corrida: corrida_5_torneo_sin_mutacion
+Descripción: Torneo(3) + cruza simple + mutación 0% (convergencia prematura)
+Parámetros: Pobl. 100 (azar) | Sel. torneo(3) | Cruza simple p=0.8 | Mut. simple 0%
+Semilla: 13
+Generaciones: 200 | Criterio de paro: max_generaciones | Tiempo: 0.23 s
+Primera generación con aptitud 55: None
+
+Mejor individuo (aptitud 44):
+10100 10001 00100 00001 01100 01011 11010
+
+Botella | Tamaño         | Contenido
+------------------------------------------
+1       | 6              | veneno
+2       | 5              | vino de ortiga
+3       | 2              | veneno
+4       | 1 (enano)      | vino de ortiga
+5       | 4              | veneno
+6       | 3              | retroceder
+7       | 7 (gigante)    | avanzar
+
+Condiciones (+5 c/u):
+  [X] C1  No se repiten tamaños entre las botellas (Pista 3)
+  [X] C2  Exactamente 3 venenos (enunciado)
+  [X] C3  Exactamente 2 vinos de ortiga (enunciado)
+  [X] C4  Exactamente 1 poción para avanzar (enunciado)
+  [X] C5  Exactamente 1 poción para retroceder (enunciado)
+  [X] C6  Todo vino tiene veneno inmediatamente a su izquierda (Pista 1)
+  [X] C7  Contenido(B1) != Contenido(B7) (Pista 2)
+  [X] C8  La botella de tamaño 1 (enano) no contiene veneno (Pista 3)
+  [X] C9  La botella de tamaño 7 (gigante) no contiene veneno (Pista 3)
+  [ ] C10 Contenido(B2) == Contenido(B6) (Pista 4)
+  [X] C11 Tamaño(B2) != Tamaño(B6) (Pista 4)
+Restricciones violadas (-3 c/u):
+  [ ] R1  B1 contiene vino (no puede tener veneno a su izquierda) (Pista 1)
+  [ ] R2  Algún vino tiene a su izquierda algo que no es veneno (Pista 1)
+  [ ] R3  B1 es la poción para avanzar (Pista 2)
+  [X] R4  B7 es la poción para avanzar (Pista 2)
+  [ ] R5  Contenido(B1) == Contenido(B7) (Pista 2)
+  [ ] R6  Alguna botella de tamaño 000 (enano) contiene veneno (Pista 3)
+  [ ] R7  Alguna botella de tamaño 110 (gigante) contiene veneno (Pista 3)
+  [X] R8  Contenido(B2) != Contenido(B6) (Pista 4)
+  [ ] R9  Tamaño(B2) == Tamaño(B6) (Pista 4)
+Genes de tamaño inválidos (111, -10 c/u): 0
+Aptitud = 5*10 - 3*2 - 10*0 = 44
+
+¿Resuelve el acertijo? NO
+La botella para avanzar es la N°7
+
+Soluciones distintas con aptitud 55 encontradas: 0

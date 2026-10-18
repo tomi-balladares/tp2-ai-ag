@@ -1,0 +1,49 @@
+Corrida: corrida_9_torneo_mascara_doble_temp_asc
+Descripción: Torneo(3) + binomial máscara doble + temperatura ascendente (1%->30%)
+Parámetros: Pobl. 100 (azar) | Sel. torneo(3) | Cruza binomial_mascara_doble p=0.8 | Mut. adaptativa_temperatura_ascendente [1%-30%]
+Semilla: 13
+Generaciones: 200 | Criterio de paro: max_generaciones | Tiempo: 0.45 s
+Primera generación con aptitud 55: None
+
+Mejor individuo (aptitud 50):
+00100 01100 00001 00011 11010 01000 00101
+
+Botella | Tamaño         | Contenido
+------------------------------------------
+1       | 2              | veneno
+2       | 4              | veneno
+3       | 1 (enano)      | vino de ortiga
+4       | 1 (enano)      | retroceder
+5       | 7 (gigante)    | avanzar
+6       | 3              | veneno
+7       | 2              | vino de ortiga
+
+Condiciones (+5 c/u):
+  [ ] C1  No se repiten tamaños entre las botellas (Pista 3)
+  [X] C2  Exactamente 3 venenos (enunciado)
+  [X] C3  Exactamente 2 vinos de ortiga (enunciado)
+  [X] C4  Exactamente 1 poción para avanzar (enunciado)
+  [X] C5  Exactamente 1 poción para retroceder (enunciado)
+  [X] C6  Todo vino tiene veneno inmediatamente a su izquierda (Pista 1)
+  [X] C7  Contenido(B1) != Contenido(B7) (Pista 2)
+  [X] C8  La botella de tamaño 1 (enano) no contiene veneno (Pista 3)
+  [X] C9  La botella de tamaño 7 (gigante) no contiene veneno (Pista 3)
+  [X] C10 Contenido(B2) == Contenido(B6) (Pista 4)
+  [X] C11 Tamaño(B2) != Tamaño(B6) (Pista 4)
+Restricciones violadas (-3 c/u):
+  [ ] R1  B1 contiene vino (no puede tener veneno a su izquierda) (Pista 1)
+  [ ] R2  Algún vino tiene a su izquierda algo que no es veneno (Pista 1)
+  [ ] R3  B1 es la poción para avanzar (Pista 2)
+  [ ] R4  B7 es la poción para avanzar (Pista 2)
+  [ ] R5  Contenido(B1) == Contenido(B7) (Pista 2)
+  [ ] R6  Alguna botella de tamaño 000 (enano) contiene veneno (Pista 3)
+  [ ] R7  Alguna botella de tamaño 110 (gigante) contiene veneno (Pista 3)
+  [ ] R8  Contenido(B2) != Contenido(B6) (Pista 4)
+  [ ] R9  Tamaño(B2) == Tamaño(B6) (Pista 4)
+Genes de tamaño inválidos (111, -10 c/u): 0
+Aptitud = 5*10 - 3*0 - 10*0 = 50
+
+¿Resuelve el acertijo? NO
+La botella para avanzar es la N°5
+
+Soluciones distintas con aptitud 55 encontradas: 0

@@ -1,0 +1,91 @@
+# Definición de las corridas del AG.
+# "defaults" se aplica a todas; cada corrida pisa solo lo que cambia.
+#
+# Valores posibles:
+#   poblacion_inicial: azar | ad_hoc
+#   seleccion:         torneo | ranking | ruleta | control_numero_esperado
+#   cruza:             simple | multipunto | binomial_mascara_complemento |
+#                      binomial_mascara_doble | binomial_azar
+#   mutacion:          simple | adaptativa_convergencia |
+#                      adaptativa_temperatura_ascendente | adaptativa_temperatura_descendente
+
+defaults:
+  semilla: 13
+  tamano_poblacion: 100
+  poblacion_inicial: azar
+  seleccion: torneo
+  tamano_torneo: 3
+  proporcion_ranking: 0.5          # ranking: fracción de mejores que se copian
+  cruza: simple
+  prob_cruza: 0.8
+  puntos_corte: 2                  # multipunto
+  # binomial_mascara_complemento: 1 = gen del padre X, 0 = gen del padre Y
+  # (por defecto, botellas impares del padre X y pares del padre Y)
+  mascara: "11111 00000 11111 00000 11111 00000 11111"
+  mascara_a: null                  # binomial_mascara_doble: null = se sortea en cada cruza
+  mascara_b: null
+  mutacion: simple
+  prob_mutacion: 0.01              # mutación simple (ProbM constante)
+  prob_min: 0.01                   # mutaciones adaptativas
+  prob_max: 0.30
+  ventana: 10                      # adaptativa_convergencia: generaciones sin mejora para ProbM máxima
+  tolerancia_estancamiento: 0.1
+  elitismo: 0                      # cantidad de individuos élite (0 = desactivado)
+  paro:                            # se corta con el primer criterio que se cumpla
+    max_generaciones: 200
+    parar_en_aptitud_maxima: false # true = cortar apenas aparece un individuo con 55
+    promedio_objetivo: 55          # null para desactivar
+    tolerancia_promedio: 0.5
+    tiempo_maximo: 120             # segundos; null para desactivar
+
+corridas:
+  - nombre: corrida_1_torneo_simple
+    descripcion: Torneo(3) + cruza simple + mutación simple 1%, población 100
+
+  - nombre: corrida_2_ruleta_multipunto
+    descripcion: Ruleta + cruza multipunto (2 cortes) + mutación simple 1%
+    seleccion: ruleta
+    cruza: multipunto
+
+  - nombre: corrida_3_ranking_binomial_azar
+    descripcion: Ranking (50%) + cruza binomial azar + mutación simple 5%
+    seleccion: ranking
+    cruza: binomial_azar
+    prob_mutacion: 0.05
+
+  - nombre: corrida_4_cne_mascara_adaptativa
+    descripcion: Control nro. esperado + binomial máscara complemento + adaptativa por convergencia
+    seleccion: control_numero_esperado
+    cruza: binomial_mascara_complemento
+    mutacion: adaptativa_convergencia
+
+  - nombre: corrida_5_torneo_sin_mutacion
+    descripcion: Torneo(3) + cruza simple + mutación 0% (convergencia prematura)
+    prob_mutacion: 0.0
+
+  # Corrida 6: "mejor configuración anterior" = corrida 4 (mayor tasa de éxito entre la 1 y la 5
+  # con 30 semillas, ver resumen_semillas.csv) + temperatura descendente y población 300.
+  - nombre: corrida_6_mejor_temperatura_desc
+    descripcion: Control nro. esperado + máscara complemento + temperatura descendente (30%->1%), población 300
+    tamano_poblacion: 300
+    seleccion: control_numero_esperado
+    cruza: binomial_mascara_complemento
+    mutacion: adaptativa_temperatura_descendente
+
+  # Corridas extra para comparar población inicial, elitismo y los operadores restantes.
+  - nombre: corrida_7_torneo_ad_hoc
+    descripcion: Igual a la corrida 1 pero con población inicial ad hoc y corte al hallar 55
+    poblacion_inicial: ad_hoc
+    paro:
+      parar_en_aptitud_maxima: true
+
+  - nombre: corrida_8_ruleta_elitismo
+    descripcion: Igual a la corrida 2 pero con elitismo (2 individuos)
+    seleccion: ruleta
+    cruza: multipunto
+    elitismo: 2
+
+  - nombre: corrida_9_torneo_mascara_doble_temp_asc
+    descripcion: Torneo(3) + binomial máscara doble + temperatura ascendente (1%->30%)
+    cruza: binomial_mascara_doble
+    mutacion: adaptativa_temperatura_ascendente

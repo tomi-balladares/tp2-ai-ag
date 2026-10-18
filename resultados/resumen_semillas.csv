@@ -1,0 +1,10 @@
+corrida,semillas,tasa_exito_%,generacion_promedio_55,generacion_desvio_55,soluciones_distintas_promedio,tiempo_promedio_s
+corrida_1_torneo_simple,30,30.0,56.4,55.5,0.3,0.197
+corrida_2_ruleta_multipunto,30,40.0,32.8,20.9,1.2,0.221
+corrida_3_ranking_binomial_azar,30,43.3,64.2,47.5,0.8,0.192
+corrida_4_cne_mascara_adaptativa,30,83.3,38.9,23.5,36.5,0.28
+corrida_5_torneo_sin_mutacion,30,20.0,11.2,4.8,0.3,0.194
+corrida_6_mejor_temperatura_desc,30,100.0,26.9,11.0,65.3,0.868
+corrida_7_torneo_ad_hoc,30,63.3,3.2,6.9,0.9,0.093
+corrida_8_ruleta_elitismo,30,46.7,25.1,16.7,1.2,0.175
+corrida_9_torneo_mascara_doble_temp_asc,30,50.0,27.9,22.4,1.9,0.307

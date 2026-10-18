@@ -1,0 +1,16 @@
+Comparación AG vs. fuerza bruta
+================================
+Fuerza bruta: 8 disposiciones de contenido, 11520 soluciones completas, 0.062 s
+AG (9 corridas): 93 soluciones distintas (0.81% de las 11520), 3 de 8 disposiciones de contenido, tiempo total 2.60 s
+Soluciones del AG que NO están en la fuerza bruta: 0
+Tiempo promedio del AG hasta su primera solución (corridas exitosas): 0.067 s
+
+Posición de la poción para avanzar en las soluciones del AG:
+ posicion_avanzar  soluciones
+                1           0
+                2           0
+                3           0
+                4          58
+                5          35
+                6           0
+                7           0

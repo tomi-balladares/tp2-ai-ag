@@ -1,0 +1,66 @@
+
+=== corrida_1_torneo_simple ===
+Pobl. 100 (azar) | Sel. torneo(3) | Cruza simple p=0.8 | Mut. simple 1%
+Mejor aptitud 44 | 1ª gen. con 55: None | generaciones 200 | paro: max_generaciones | soluciones distintas: 0 | 0.24 s
+
+=== corrida_2_ruleta_multipunto ===
+Pobl. 100 (azar) | Sel. ruleta | Cruza multipunto(2) p=0.8 | Mut. simple 1%
+Mejor aptitud 55 | 1ª gen. con 55: 44 | generaciones 54 | paro: promedio_objetivo | soluciones distintas: 2 | 0.08 s
+
+=== corrida_3_ranking_binomial_azar ===
+Pobl. 100 (azar) | Sel. ranking(50%) | Cruza binomial_azar p=0.8 | Mut. simple 5%
+Mejor aptitud 55 | 1ª gen. con 55: 32 | generaciones 118 | paro: promedio_objetivo | soluciones distintas: 2 | 0.15 s
+
+=== corrida_4_cne_mascara_adaptativa ===
+Pobl. 100 (azar) | Sel. control_numero_esperado | Cruza binomial_mascara_complemento p=0.8 | Mut. adaptativa_convergencia [1%-30%]
+Mejor aptitud 55 | 1ª gen. con 55: 20 | generaciones 200 | paro: max_generaciones | soluciones distintas: 53 | 0.28 s
+
+=== corrida_5_torneo_sin_mutacion ===
+Pobl. 100 (azar) | Sel. torneo(3) | Cruza simple p=0.8 | Mut. simple 0%
+Mejor aptitud 44 | 1ª gen. con 55: None | generaciones 200 | paro: max_generaciones | soluciones distintas: 0 | 0.23 s
+
+=== corrida_6_mejor_temperatura_desc ===
+Pobl. 300 (azar) | Sel. control_numero_esperado | Cruza binomial_mascara_complemento p=0.8 | Mut. adaptativa_temperatura_descendente [1%-30%]
+Mejor aptitud 55 | 1ª gen. con 55: 36 | generaciones 200 | paro: max_generaciones | soluciones distintas: 35 | 0.87 s
+
+=== corrida_7_torneo_ad_hoc ===
+Pobl. 100 (ad_hoc) | Sel. torneo(3) | Cruza simple p=0.8 | Mut. simple 1%
+Mejor aptitud 55 | 1ª gen. con 55: 28 | generaciones 28 | paro: aptitud_maxima | soluciones distintas: 1 | 0.04 s
+
+=== corrida_8_ruleta_elitismo ===
+Pobl. 100 (azar) | Sel. ruleta | Cruza multipunto(2) p=0.8 | Mut. simple 1% | Elitismo 2
+Mejor aptitud 47 | 1ª gen. con 55: None | generaciones 200 | paro: max_generaciones | soluciones distintas: 0 | 0.26 s
+
+=== corrida_9_torneo_mascara_doble_temp_asc ===
+Pobl. 100 (azar) | Sel. torneo(3) | Cruza binomial_mascara_doble p=0.8 | Mut. adaptativa_temperatura_ascendente [1%-30%]
+Mejor aptitud 50 | 1ª gen. con 55: None | generaciones 200 | paro: max_generaciones | soluciones distintas: 0 | 0.45 s
+
+Comparación AG vs. fuerza bruta
+================================
+Fuerza bruta: 8 disposiciones de contenido, 11520 soluciones completas, 0.062 s
+AG (9 corridas): 93 soluciones distintas (0.81% de las 11520), 3 de 8 disposiciones de contenido, tiempo total 2.60 s
+Soluciones del AG que NO están en la fuerza bruta: 0
+Tiempo promedio del AG hasta su primera solución (corridas exitosas): 0.067 s
+
+Posición de la poción para avanzar en las soluciones del AG:
+ posicion_avanzar  soluciones
+                1           0
+                2           0
+                3           0
+                4          58
+                5          35
+                6           0
+                7           0
+
+=== Estudio con 30 semillas por corrida ===
+  corrida_1_torneo_simple                    éxito  30.0%  gen. prom. 56.4
+  corrida_2_ruleta_multipunto                éxito  40.0%  gen. prom. 32.8
+  corrida_3_ranking_binomial_azar            éxito  43.3%  gen. prom. 64.2
+  corrida_4_cne_mascara_adaptativa           éxito  83.3%  gen. prom. 38.9
+  corrida_5_torneo_sin_mutacion              éxito  20.0%  gen. prom. 11.2
+  corrida_6_mejor_temperatura_desc           éxito 100.0%  gen. prom. 26.9
+  corrida_7_torneo_ad_hoc                    éxito  63.3%  gen. prom. 3.2
+  corrida_8_ruleta_elitismo                  éxito  46.7%  gen. prom. 25.1
+  corrida_9_torneo_mascara_doble_temp_asc    éxito  50.0%  gen. prom. 27.9
+
+Resultados en /Users/tballadares/Desktop/UTN/IA/TP2/snape_ag/resultados
